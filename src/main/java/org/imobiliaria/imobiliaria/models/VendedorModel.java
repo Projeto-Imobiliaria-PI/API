@@ -1,13 +1,12 @@
-package org.imobiliaria.imobiliaria.entities;
+package org.imobiliaria.imobiliaria.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity(name = "vendedor")
-public class Vendedor implements Serializable {
+public class VendedorModel implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,15 +22,14 @@ public class Vendedor implements Serializable {
     @Column(name = "area")
     String area;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "dataAdmissao")
-    LocalDate dataAdmissao;
+    Date dataAdmissao;
 
     @Column(name = "Ativo")
     boolean ativo;
 
 
-    public Vendedor(String nome, String cpf, String area, LocalDate dataAdmissao, boolean ativo) {
+    public VendedorModel(String nome, String cpf, String area, Date dataAdmissao, boolean ativo) {
         super();
         this.nome = nome;
         this.cpf = formatCpf(cpf);
@@ -52,11 +50,11 @@ public class Vendedor implements Serializable {
         this.nome = nome;
     }
 
-    public LocalDate getDataAdmissao() {
+    public Date getDataAdmissao() {
         return dataAdmissao;
     }
 
-    public void setDataAdmissao(LocalDate dataAdmissao) {
+    public void setDataAdmissao(Date dataAdmissao) {
         this.dataAdmissao = dataAdmissao;
     }
 
@@ -84,7 +82,7 @@ public class Vendedor implements Serializable {
         this.area = area;
     }
 
-    public Vendedor() {
+    public VendedorModel() {
     }
 
     @Override
