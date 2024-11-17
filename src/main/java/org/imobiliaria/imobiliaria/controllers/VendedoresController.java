@@ -13,7 +13,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 33600)
 @RestController
-@RequestMapping("/imobiliaria")
+@RequestMapping("/vendedores")
 public class VendedoresController {
 
     private final VendedorService vendedorService;
